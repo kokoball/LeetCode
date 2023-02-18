@@ -14,13 +14,10 @@ var lengthOfLongestSubstring = function(s) {
             const tempArr = checkArr.slice(checkNum + 1, checkArr.length)
             checkArr = tempArr
             checkArr.push(arr[i])
-        } else {
-            checkArr.push(arr[i])
-        }
+        } else checkArr.push(arr[i])
     }
     
     if(answer < checkArr.length) answer = checkArr.length;
-
     if (!answer) return s.length
     return answer
 };
