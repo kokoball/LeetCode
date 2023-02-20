@@ -4,39 +4,19 @@
  * @return {string}
  */
 var convert = function(s, numRows) {
-    let answer = ''
-    const arr = []
-    let arrow = true
-    let row = 0;
-    let col = 0;
-    
-    if(numRows === 1) return s
-    
-    for(let i = 0; i < numRows; i++){
-        const tempArr = Array.from({length: s.length}, () => "")
-        arr.push(tempArr)
+  const len = s.length;
+  if (numRows < 2 || len < numRows) {
+    return s;
+  }
+  const rows = new Array(numRows).fill('');
+  let reverse = false;
+  let count = 0;
+  for (let i = 0; i < len; i++) {
+    rows[count] += s[i];
+    reverse? count--: count++;
+    if (count === numRows - 1 || count === 0) {
+      reverse = !reverse;
     }
-    
-    arr[row][col] = s[0]
-    
-    for(let i = 1; i < s.length; i++ ){
-        if(arrow)row++
-        else{
-            console.log(row, col)
-            if(row !== 0) row--
-            col++
-        }
-        arr[row][col] = s[i]
-        
-        if(i % (numRows - 1) === 0) arrow = !arrow
-        
-    }
-    
-    for(let i = 0; i < numRows; i++){
-        for(let j = 0; j < s.length; j++){
-            if(arr[i][j] !== '') answer += arr[i][j]
-        }        
-    }
-    
-    return answer
+  }
+  return rows.join('');
 };
