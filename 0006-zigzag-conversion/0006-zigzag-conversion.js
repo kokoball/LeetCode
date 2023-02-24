@@ -5,9 +5,7 @@
  */
 var convert = function(s, numRows) {
   const len = s.length;
-  if (numRows < 2 || len < numRows) {
-    return s;
-  }
+  if (numRows < 2 || len < numRows)  return s
   const rows = new Array(numRows).fill('');
   let reverse = false;
   let count = 0;
