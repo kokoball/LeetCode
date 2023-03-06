@@ -3,7 +3,7 @@
  * @return {string[]}
  */
 var letterCombinations = function(digits) {
-    const numArr = ['','','abc','def','ghi','jkl','mno','pqrs','tuv','wxyz']
+    const numArr = ['','','abc','def','ghi','jkl','mno','pqrs','tuv','wxyz'];
     let answer = []
     
     for(let i = 0; i < digits.length; i++ ){
