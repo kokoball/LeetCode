@@ -4,7 +4,7 @@
  */
 var letterCombinations = function(digits) {
     const numArr = ['','','abc','def','ghi','jkl','mno','pqrs','tuv','wxyz'];
-    let answer = []
+    let answer = [];
     
     for(let i = 0; i < digits.length; i++ ){
         const nowNum = +digits[digits.length - 1 - i]
