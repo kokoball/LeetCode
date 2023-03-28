@@ -13,7 +13,7 @@ const merge = (intervals) => {
         
         if (answer[lastIdx][1] >= intervals[i][0]) {
             if (answer[lastIdx][1] < intervals[i][1]) {
-                answer[lastIdx][1] = intervals[i][1]
+                answer[lastIdx][1] = intervals[i][1];
             }
         } else {
             answer.push([...intervals[i]])
